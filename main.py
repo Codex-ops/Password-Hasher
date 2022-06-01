@@ -33,6 +33,8 @@ hashed_string = hashlib.sha256(a_string.encode('utf-8')).hexdigest()
 
 # Outputs hashed & normal password in files 
 def file():
+    os.mkdir("passwords")
+    os.chdir("passwords")
     a = open("hashes.txt", "a")
     a.write(hashed_string + "\n")
     a.close()
